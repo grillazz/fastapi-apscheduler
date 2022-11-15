@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "fastapi-apscheduler"
+version = "0.1.0"
+description = ""
+authors = ["Jakub Miazek <the@grillazz.com>"]
+readme = "README.md"
+packages = [{include = "fastapi_apscheduler"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.87.0"
+APScheduler = "^3.9.1.post1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+ruff = "^0.0.120"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
