@@ -15,6 +15,7 @@ APScheduler = "^3.9.1.post1"
 [tool.poetry.group.dev.dependencies]
 black = "^22.10.0"
 ruff = "^0.0.120"
+uvicorn = "^0.19.0"
 
 [build-system]
 requires = ["poetry-core"]
