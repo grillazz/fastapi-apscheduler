@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 from .utils import get_logger
 from .scheduler import add_scheduler
-from .jobs import get_users_router
+from .routers import get_users_router
 
 logger = get_logger(__name__)
 
