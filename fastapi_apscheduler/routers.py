@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Request, status
 from .utils import get_logger
+from .schemas import Job
 
 logger = get_logger(__name__)
 
@@ -13,8 +14,8 @@ def get_users_router() -> APIRouter:
     router = APIRouter()
 
     @router.post("", name="scheduler:add_job", status_code=status.HTTP_201_CREATED)
-    async def add_job(request: Request, job: dict):
-        job = request.app.state.scheduler.add_job(**job)
+    async def add_job(request: Request, job: Job):
+        job = request.app.state.scheduler.add_job(**job.dict())
         return {"job": f"{job.id}"}
 
     @router.get("", name="scheduler:get_jobs", response_model=list)
