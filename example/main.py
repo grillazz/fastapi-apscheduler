@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 
-from .utils import get_logger
-from .scheduler import add_scheduler
-from .routers import get_users_router
+from fastapi_apscheduler.utils import get_logger
+from fastapi_apscheduler.scheduler import add_scheduler
+from fastapi_apscheduler.routers import get_users_router
 
 logger = get_logger(__name__)
 
