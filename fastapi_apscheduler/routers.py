@@ -9,7 +9,7 @@ class JobNotFound(Exception):
     pass
 
 
-def get_users_router() -> APIRouter:
+def get_jobs_router() -> APIRouter:
     """Generate a router with the scheduler routes."""
     router = APIRouter()
 

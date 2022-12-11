@@ -1,25 +1,42 @@
 [tool.poetry]
 name = "fastapi-apscheduler"
-version = "0.1.0"
-description = ""
+version = "0.0.1"
+description = "Allow manage APScheduler with FastAPI router"
 authors = ["Jakub Miazek <the@grillazz.com>"]
 readme = "README.md"
 packages = [{include = "fastapi_apscheduler"}]
 
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/grillazz/fastapi-apscheduler"
+
+classifiers = [
+    'Operating System :: OS Independent',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3 :: Only',
+]
+
 [tool.poetry.dependencies]
-python = "^3.10"
+python = ">=3.8,<4.0"
 fastapi = "^0.87.0"
 APScheduler = "^3.9.1.post1"
-
+rich = "^12.6.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.10.0"
 ruff = "^0.0.120"
 uvicorn = "^0.19.0"
-rich = "^12.6.0"
 SQLAlchemy = "^1.4.44"
 aiosqlite = "^0.17.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
