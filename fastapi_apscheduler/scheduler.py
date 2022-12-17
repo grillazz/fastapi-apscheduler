@@ -9,7 +9,6 @@ logger = get_logger(__name__)
 
 
 class AsyncScheduler(AsyncIOScheduler):
-
     def __init__(self, url=None):
         self.jobstores = {"default": SQLAlchemyJobStore(url=url)}
         super().__init__(jobstores=self.jobstores)

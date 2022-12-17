@@ -10,9 +10,7 @@ app = FastAPI()
 
 add_scheduler(app, "sqlite:///jobs.sqlite")
 
-app.include_router(
-   get_jobs_router(), prefix="/scheduler", tags=["scheduler"]
-)
+app.include_router(get_jobs_router(), prefix="/scheduler", tags=["scheduler"])
 
 
 async def pytest_job():
