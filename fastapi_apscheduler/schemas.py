@@ -16,11 +16,5 @@ class Job(BaseModel):
     class Config:
 
         schema_extra = {
-            "example": {
-                "func": "example:main:pytest_job",
-                "trigger": "interval",
-                "seconds": 3,
-                "id": "pytest_job"
-            }
+            "example": {"func": "example:main:pytest_job", "trigger": "interval", "seconds": 3, "id": "pytest_job"}
         }
-

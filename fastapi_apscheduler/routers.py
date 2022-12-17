@@ -21,10 +21,7 @@ def get_jobs_router() -> APIRouter:
     @router.get("", name="scheduler:get_jobs", response_model=list)
     async def get_jobs(request: Request):
         jobs = request.app.state.scheduler.get_jobs()
-        jobs = [
-            dict((k, v) for k, v in job.__getstate__().items() if k != "trigger")
-            for job in jobs
-        ]
+        jobs = [dict((k, v) for k, v in job.__getstate__().items() if k != "trigger") for job in jobs]
         return jobs
 
     @router.delete("/{job_id}", name="scheduler:remove_job")
