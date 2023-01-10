@@ -54,6 +54,17 @@ twisted = ["twisted"]
 zookeeper = ["kazoo"]
 
 [[package]]
+name = "asgi-lifespan"
+version = "2.0.0"
+description = "Programmatic startup/shutdown of ASGI apps."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+sniffio = "*"
+
+[[package]]
 name = "attrs"
 version = "22.1.0"
 description = "Classes Without Boilerplate"
@@ -572,7 +583,7 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<4.0"
-content-hash = "c16bc33ca5d8c2a1b3b189c33d49ad1fe1f86b7759150519e49e8690c732350f"
+content-hash = "538075ce775d3d3046159d77e78d964793af98be9be003b11235c7e88a470844"
 
 [metadata.files]
 aiosqlite = [
@@ -586,6 +597,10 @@ anyio = [
 APScheduler = [
     {file = "APScheduler-3.9.1.post1-py2.py3-none-any.whl", hash = "sha256:c8c618241dbb2785ed5a687504b14cb1851d6f7b5a4edf3a51e39cc6a069967a"},
     {file = "APScheduler-3.9.1.post1.tar.gz", hash = "sha256:b2bea0309569da53a7261bfa0ce19c67ddbfe151bda776a6a907579fdbd3eb2a"},
+]
+asgi-lifespan = [
+    {file = "asgi-lifespan-2.0.0.tar.gz", hash = "sha256:d46a31ff681e9edf1f776c9f61cf8fa6274cc66fca8cb4f11e940b1183e18842"},
+    {file = "asgi_lifespan-2.0.0-py3-none-any.whl", hash = "sha256:420582b1786b238d035244415dc11536acdbcb24762cba1c5e9bddc565960277"},
 ]
 attrs = [
     {file = "attrs-22.1.0-py2.py3-none-any.whl", hash = "sha256:86efa402f67bf2df34f51a335487cf46b1ec130d02b8d39fd248abfd30da551c"},
