@@ -16,15 +16,13 @@ class AsyncScheduler(AsyncIOScheduler):
 
 def add_scheduler(app: FastAPI, url: str) -> FastAPI:
     @app.on_event("startup")
-    async def start_scheduler() -> None:
+    def start_scheduler() -> None:
         app.state.scheduler = AsyncScheduler(url)
         app.state.scheduler.start()
         logger.info(f"startup event - {app.state.scheduler.state=}")
 
     @app.on_event("shutdown")
-    async def stop_scheduler() -> None:
+    def stop_scheduler() -> None:
         app.state.scheduler.shutdown()
-        await asyncio.sleep(5)
-        logger.info(f"shutdown event - {app.state.scheduler.state=}")
 
     return app
