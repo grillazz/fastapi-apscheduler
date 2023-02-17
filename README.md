@@ -16,3 +16,27 @@ pip install fastapi-apscheduler
 ```python
 from fastapi import FastAPI
 from fastapi_apscheduler import scheduler
+```
+
+
+
+## Build and publish to pypi with poetry
+```bash
+poetry build
+
+Building fastapi-apscheduler (0.0.x)
+  - Building sdist
+  - Built fastapi_apscheduler-0.0.x.tar.gz
+  - Building wheel
+  - Built fastapi_apscheduler-0.0.x-py3-none-any.whl
+
+poetry publish
+
+Publishing fastapi-apscheduler (0.0.x) to PyPI
+ - Uploading fastapi_apscheduler-0.0.x-py3-none-any.whl 100%
+```
+
+## TODO:
+- add CI
+- add tests to CI
+- add coverage to CI
