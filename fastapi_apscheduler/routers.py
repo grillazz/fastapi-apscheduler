@@ -5,7 +5,7 @@ from .schemas import Job
 logger = get_logger(__name__)
 
 
-class JobNotFound(Exception):
+class JobNotFoundError(Exception):
     pass
 
 
@@ -21,7 +21,7 @@ def get_jobs_router() -> APIRouter:
     @router.get("", name="scheduler:get_jobs", response_model=list)
     async def get_jobs(request: Request):
         jobs = request.app.state.scheduler.get_jobs()
-        jobs = [dict((k, v) for k, v in job.__getstate__().items() if k != "trigger") for job in jobs]
+        jobs = [{k: v for k, v in job.__getstate__().items() if k != "trigger"} for job in jobs]
         return jobs
 
     @router.delete("/{job_id}", name="scheduler:remove_job")
@@ -30,7 +30,7 @@ def get_jobs_router() -> APIRouter:
             deleted = request.app.state.scheduler.remove_job(job_id=job_id)
             logger.debug(f"Job {job_id} deleted: {deleted}")
             return {"job": f"{job_id}"}
-        except AttributeError:
-            raise JobNotFound(f"No job by the id of {job_id} was found")
+        except AttributeError as err:
+            raise JobNotFoundError(f"No job by the id of {job_id} was found") from err
 
     return router
