@@ -1,5 +1,3 @@
-import asyncio
-
 from fastapi import FastAPI
 from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
