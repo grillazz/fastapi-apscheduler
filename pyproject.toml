@@ -21,7 +21,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = ">=3.8,<4.0"
-fastapi = "^0.104.1"
+fastapi = "^0.105.0"
 APScheduler = "^3.10.4"
 
 [tool.poetry.group.dev.dependencies]
