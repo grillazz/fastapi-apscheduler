@@ -7,12 +7,6 @@ from .utils import get_logger
 
 logger = get_logger(__name__)
 
-
-# class AsyncScheduler(AsyncIOScheduler):
-#     def __init__(self, url=None):
-#         self.jobstores = {"default": SQLAlchemyJobStore(url=url)}
-
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     jobstores = {"default": SQLAlchemyJobStore(url="sqlite:///jobs.sqlite")}
@@ -23,14 +17,3 @@ async def lifespan(app: FastAPI):
         yield
     finally:
         app.state.scheduler.shutdown()
-
-
-# @asynccontextmanager
-# async def lifespan(app: FastAPI):
-#     # Load the redis connection
-#     app.state.redis = await get_redis()
-#     try:
-#         yield
-#     finally:
-#         # close redis connection and release the resources
-#         app.state.redis.close()

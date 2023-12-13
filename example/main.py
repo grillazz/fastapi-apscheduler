@@ -17,3 +17,8 @@ async def pytest_job():
 # TODO: job to test netowrk seed with ookla pytjhon client via apscheduler
 # TODO: mount via lifespan should happen as meny time as many workers you add
 # TODO: fix duppl;icates via redis aio locks
+
+
+# TODO: test with gunicorn uvicorn workers
+# TODO: gunicorn example.main:app -w 5 -k uvicorn.workers.UvicornWorker
+# TODO: add some gui for example with i.e. https://github.com/pydantic/FastUI
