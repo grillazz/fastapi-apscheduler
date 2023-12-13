@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Request, status
 from .utils import get_logger
 from .schemas import Job
+from .scheduler import lifespan
 
 logger = get_logger(__name__)
 
