@@ -6,15 +6,15 @@ import pytest
 from fastapi import FastAPI
 from httpx import AsyncClient
 
-from fastapi_apscheduler.scheduler import add_scheduler
+from fastapi_apscheduler.scheduler import lifespan as add_scheduler
 from fastapi_apscheduler.routers import get_jobs_router
 
 
 @pytest.fixture
 def app_factory():
     def _app_factory() -> FastAPI:
-        app = FastAPI()
-        add_scheduler(app, "sqlite:///test-jobs.sqlite")
+        app = FastAPI(lifespan=add_scheduler)
+
         app.include_router(get_jobs_router(), prefix="/scheduler", tags=["scheduler"])
         return app
 
