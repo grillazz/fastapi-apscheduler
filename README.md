@@ -49,6 +49,11 @@ Publishing fastapi-apscheduler (0.0.x) to PyPI
  - Uploading fastapi_apscheduler-0.0.x-py3-none-any.whl 100%
 ```
 
+## Run local instance of worker with uvicorn
+```bash
+uvicorn example.main:app --workers 1 --port 8084 --log-level debug --env-file example/.env
+```
+
 ## TODO:
 - add CI
 - add tests to CI
