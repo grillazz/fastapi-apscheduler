@@ -12,7 +12,7 @@ app.include_router(get_jobs_router(), prefix="/scheduler", tags=["scheduler"])
 
 
 async def pytest_job():
-    logger.info("test_job")
+    logger.info("run_job")
 
 
 

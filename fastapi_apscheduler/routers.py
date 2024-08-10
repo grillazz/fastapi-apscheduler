@@ -44,7 +44,7 @@ def get_jobs_router() -> APIRouter:
         Returns:
             list: A list of dictionaries representing the jobs.
         """
-        jobs = request.state.scheduler.get_jobs()
+        jobs = request.app.scheduler.get_jobs()
         jobs = [{k: v for k, v in job.__getstate__().items() if k != "trigger"} for job in jobs]
         return jobs
 
@@ -64,7 +64,7 @@ def get_jobs_router() -> APIRouter:
             JobNotFoundError: If no job with the given ID is found.
         """
         try:
-            deleted = request.state.scheduler.remove_job(job_id=job_id)
+            deleted = request.app.scheduler.remove_job(job_id=job_id)
             logger.debug(f"Job {job_id} deleted: {deleted}")
             return {"job": f"{job_id}"}
         except AttributeError as err:
