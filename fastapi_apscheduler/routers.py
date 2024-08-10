@@ -15,7 +15,7 @@ def get_jobs_router() -> APIRouter:
 
     @router.post("", name="scheduler:add_job", status_code=status.HTTP_201_CREATED)
     async def add_job(request: Request, job: Job):
-        job = request.app.scheduler.add_job(**job.dict())
+        job = request.app.scheduler.add_job(**job.model_dump())
         return {"job": f"{job.id}"}
 
     @router.get("", name="scheduler:get_jobs", response_model=list)
