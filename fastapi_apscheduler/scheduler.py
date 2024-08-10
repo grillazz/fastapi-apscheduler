@@ -11,11 +11,13 @@ logger = get_logger(__name__)
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI):
-    jobstores = {"default": SQLAlchemyJobStore(url=settings.job_store_url)}
-    app.state.scheduler = AsyncIOScheduler(jobstores=jobstores)
+async def lifespan(_app: FastAPI):
+    _job_store = {"default": SQLAlchemyJobStore(url=settings.job_store_url)}
+    _app.scheduler = AsyncIOScheduler(jobstores=_job_store)
     try:
-        app.state.scheduler.start()
+        _app.scheduler.start()
+        logger.info("Scheduler started")
         yield
     finally:
-        app.state.scheduler.shutdown()
+        _app.scheduler.shutdown()
+        logger.info("Scheduler shutdown")
