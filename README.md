@@ -63,3 +63,6 @@ uvicorn example.main:app --workers 1 --port 8084 --log-level debug --env-file ex
 - add CI
 - add tests to CI
 - add coverage to CI
+
+## Sources:
+- bit about lifespan events: https://www.youtube.com/watch?v=_CzaciNrHRE
