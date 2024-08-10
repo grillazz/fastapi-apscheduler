@@ -1,6 +1,3 @@
-import os
-from unittest import mock
-
 from fastapi import FastAPI
 
 from fastapi_apscheduler.utils import get_logger

@@ -1,9 +1,11 @@
 from enum import Enum
 from pydantic import BaseModel, ConfigDict, Field
 
-config = ConfigDict(json_schema_extra={
-    "example": {"func": "example.main:pytest_job", "trigger": "interval", "seconds": 3, "id": "pytest_job"}
-})
+config = ConfigDict(
+    json_schema_extra={
+        "example": {"func": "example.main:pytest_job", "trigger": "interval", "seconds": 3, "id": "pytest_job"}
+    }
+)
 
 
 class TriggerEnum(str, Enum):
