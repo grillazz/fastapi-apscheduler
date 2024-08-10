@@ -43,10 +43,15 @@ Building fastapi-apscheduler (0.0.x)
   - Building wheel
   - Built fastapi_apscheduler-0.0.x-py3-none-any.whl
 
+
+poetry config pypi-token.pypi <token>
+
+
 poetry publish
 
-Publishing fastapi-apscheduler (0.0.x) to PyPI
- - Uploading fastapi_apscheduler-0.0.x-py3-none-any.whl 100%
+Publishing fastapi-apscheduler (0.0.6) to PyPI
+ - Uploading fastapi_apscheduler-0.0.6-py3-none-any.whl 100%
+ - Uploading fastapi_apscheduler-0.0.6.tar.gz 100%
 ```
 
 ## Run local instance of worker with uvicorn

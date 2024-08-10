@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fastapi-apscheduler"
-version = "0.0.6"
+version = "0.0.7"
 description = "Allow manage APScheduler with FastAPI router"
 authors = ["Jakub Miazek <the@grillazz.com>"]
 readme = "README.md"
@@ -22,11 +22,10 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = ">=3.8,<4.0"
-fastapi = "^0.105.0"
+fastapi = {version = "^0.112.0", extras = ["all"]}
 APScheduler = "^3.10.4"
-gunicorn = "^21.2.0"
+gunicorn = "^22.0.0"
 typing-extensions = "^4.9.0"
-pydantic-settings = "^2.1.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.1.7"
@@ -39,8 +38,8 @@ rich = "^13.7.0"
 [tool.poetry.group.test.dependencies]
 asgi-lifespan = "^2.1.0"
 httpx = "^0.23.2"
-pytest-cov = "^4.1.0"
-pytest-asyncio = "^0.23.2"
+pytest = "^8.3.2"
+pytest-cov = "^5.0.0"
 
 [build-system]
 requires = ["poetry-core"]
